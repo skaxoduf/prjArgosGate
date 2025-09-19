@@ -438,7 +438,6 @@ Public Class Form1
                     logMessage = $"1차 인증 성공: UserID({isUserID}), FingerID({objMatchedFpInfo.FingerID}) 찾음"
                     WriteLog(logMessage, LOG_TO_FILE, LOG_FILE_NAME)
 
-                    ' 여기에서 비지니스 로직을 수행하거나 아니면 웹으로 인증결과만 넘겨주고 웹의 방문창을 띄우게 하거나...
                     ' -------------------비즈니스 로직(권한 확인) 시작-----------------------
                     If CheckUserAuthorizationFromDB(isUserID) Then
                         isAuthorized = 1 ' 인증 성공
