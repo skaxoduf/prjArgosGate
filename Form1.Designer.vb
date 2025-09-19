@@ -28,8 +28,11 @@ Partial Class Form1
         txtFingerDataLog = New TextBox()
         TextBox1 = New TextBox()
         Panel1 = New Panel()
+        Button1 = New Button()
+        btnExit = New Button()
         CType(WebView21, ComponentModel.ISupportInitialize).BeginInit()
         pnlCSMain.SuspendLayout()
+        Panel1.SuspendLayout()
         SuspendLayout()
         ' 
         ' WebView21
@@ -76,10 +79,36 @@ Partial Class Form1
         ' 
         ' Panel1
         ' 
+        Panel1.Controls.Add(Button1)
+        Panel1.Controls.Add(btnExit)
         Panel1.Location = New Point(12, 12)
         Panel1.Name = "Panel1"
         Panel1.Size = New Size(894, 62)
         Panel1.TabIndex = 4
+        ' 
+        ' Button1
+        ' 
+        Button1.BackColor = Color.MidnightBlue
+        Button1.Font = New Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(129))
+        Button1.ForeColor = Color.White
+        Button1.Location = New Point(6, 7)
+        Button1.Name = "Button1"
+        Button1.Size = New Size(106, 48)
+        Button1.TabIndex = 1
+        Button1.Text = "환경설정"
+        Button1.UseVisualStyleBackColor = False
+        ' 
+        ' btnExit
+        ' 
+        btnExit.BackColor = Color.MidnightBlue
+        btnExit.Font = New Font("맑은 고딕", 15.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(129))
+        btnExit.ForeColor = Color.White
+        btnExit.Location = New Point(782, 7)
+        btnExit.Name = "btnExit"
+        btnExit.Size = New Size(106, 48)
+        btnExit.TabIndex = 1
+        btnExit.Text = "종 료"
+        btnExit.UseVisualStyleBackColor = False
         ' 
         ' Form1
         ' 
@@ -97,6 +126,7 @@ Partial Class Form1
         CType(WebView21, ComponentModel.ISupportInitialize).EndInit()
         pnlCSMain.ResumeLayout(False)
         pnlCSMain.PerformLayout()
+        Panel1.ResumeLayout(False)
         ResumeLayout(False)
     End Sub
     Friend WithEvents WebView21 As Microsoft.Web.WebView2.WinForms.WebView2
@@ -104,5 +134,7 @@ Partial Class Form1
     Friend WithEvents txtFingerDataLog As TextBox
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Panel1 As Panel
+    Friend WithEvents btnExit As Button
+    Friend WithEvents Button1 As Button
 
 End Class

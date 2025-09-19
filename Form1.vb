@@ -71,8 +71,8 @@ Public Class Form1
 
 
         ' 타이틀 애니메이션 타이머 간격 설정 (400ms = 0.4초)
-        TitleAnimationTimer.Interval = 400
-        TitleAnimationTimer.Start()
+        'TitleAnimationTimer.Interval = 400
+        'TitleAnimationTimer.Start()
 
         WebView21.Visible = False  ' 웹뷰는 숨긴다.
         pnlCSMain.Visible = True   ' 데몬 프로그램 패널을 보여준다.
@@ -561,7 +561,7 @@ Public Class Form1
                 End If
             End Using
 
-            '새로운 데이터가 없으면, 원래 로직을 실행하지 않고 즉시 종료.
+            '새로운 데이터가 없으면 종료.
             If Not hasNewData Then Return
 
             Dim sql As String = "SELECT F_MEM_IDX, F_FINGER FROM T_MEM_PHOTO " &
@@ -655,7 +655,6 @@ Public Class Form1
             End Try
         End If
     End Sub
-
     Private Sub TitleAnimationTimer_Tick(sender As Object, e As EventArgs) Handles TitleAnimationTimer.Tick
 
         ' 점(.)의 개수를 1씩 증가시킵니다.
@@ -671,8 +670,13 @@ Public Class Form1
         Me.Text = baseTitle & New String("."c, dotCount) & New String(" "c, 10 - dotCount)
 
     End Sub
-
     Private Sub Form1_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
         TitleAnimationTimer.Stop()
+    End Sub
+
+    Private Sub btnExit_Click(sender As Object, e As EventArgs) Handles btnExit.Click
+
+        Me.Close()
+
     End Sub
 End Class
